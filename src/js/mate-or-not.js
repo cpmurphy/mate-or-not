@@ -104,14 +104,19 @@
     messageBox.addClass('error-message');
     messageBox.text(message);
   }
-  function removeErrorMessage() {
-    $("#message").text("");
+  function resetMessage() {
+    var messageBox = $("#message").text("");
+    messageBox.removeClass("success-message");
+    messageBox.removeClass("error-message");
+    messageBox.text("");
   }
   function updateMateButtonAction() {
     $("#mate").click(function() {
       if (currentPositionIsMate) {
         showGreenSuccess();
-        showRandomPosition();
+        setTimeout(function() {
+          showRandomPosition();
+        }, 400);
       } else {
 				errorBeep();
         showErrorMessage('Not Mate!');
@@ -134,7 +139,7 @@
       var possibleMate = randomMateOrNot(),
           position = possibleMate.position;
       currentPositionIsMate = possibleMate.mate;
-      removeErrorMessage();
+      resetMessage();
       BOARD.orientation(whoJustMoved(position));
       BOARD.position(position);
   }
