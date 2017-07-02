@@ -1,0 +1,18 @@
+#board {
+  width: 400px;
+}
+#message {
+  width: 400px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+  height: 2em;
+}
+.error-message {
+  background-color: white;
+  color: red;
+}
+.success-message {
+  background-color: green;
+  color: white;
+}
