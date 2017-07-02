@@ -13,18 +13,34 @@
         "7R/2k5/r1p5/8/8/8/KPPn4/8 w - - 0 1",
         "5bkQ/ppq2p1p/2p5/8/8/1P4P1/PB3PKP/8 b - - 1 1",
         "6kR/6P1/5K2/8/8/8/5p2/3r4 b - - 1 1",
-        "8/1kp2RP1/8/3N4/8/2n5/r7/K7 w - - 1 1",
+        "8/1kp2RP1/8/3N4/8/2n5/r7/K7 w - - 0 1",
         "3R2k1/5ppp/r7/8/2b5/8/5PPP/6K1 b - - 1 1",
-        "8/6kp/8/8/3b2pP/1P4n1/P5PR/4rQK1 w - - 1 1",
+        "8/6kp/8/8/3b2pP/1P4n1/P5PR/4rQK1 w - - 0 1",
+        "6q1/1p6/4pQ2/3pP3/6kp/8/1P5K/3B4 b - - 4 49", // Topalov Morozevich, 2012
+        "8/1kp5/1p3P2/6P1/6Q1/2np4/2r4P/2K5 w - - 0 1",
+        "7R/r5pk/6N1/5P2/8/p4P2/6K1/8 b - - 1 1",
+        "4r2k/6p1/5p1p/1Q6/p2P1n2/N1R4P/6q1/7K w - - 0 1",
+        "7k/7Q/p3q3/2p4p/Pp1n4/1P1B3P/2P5/7K b - - 9 47", // Can Ererdem, 2012
+        "6k1/R5pp/4Np2/5P2/2n5/8/P1P5/2K3r1 w - - 0 1",
+        "1R6/P1K5/2P5/8/8/5q2/p1N3b1/k7 b - - 1 1",
+        "3r3k/8/7p/8/4P1P1/5r2/q1K1Qb1R/2R5 w - - 0 39", // Caro Naroditsky 2012
       ],
       NON_MATE_POSTIONS = [
         "3Rk3/2q5/8/8/7B/6P1/6K1/8 b - - 0 1",
         "7R/2k5/r1p5/8/8/1P6/K1Pn4/8 w - - 0 1",
         "5bkQ/ppq2n1p/2p5/8/8/1P4P1/PB3PKP/8 b - - 1 1",
         "6kR/4K1P1/8/8/8/8/5p2/3r4 b - - 1 1",
-        "8/2kp1RP1/8/3B4/8/2n5/r7/K7 w - - 1 1",
+        "8/2kp1RP1/8/3B4/8/2n5/r7/K7 w - - 0 1",
         "3R2k1/5ppp/r7/2b5/8/8/5PPP/6K1 b - - 1 1",
-        "8/6kp/8/8/3b2pP/1P4n1/P5PR/5QK1 w - - 1 1",
+        "8/6kp/8/8/3b2pP/1P4n1/P5PR/5QK1 w - - 0 1",
+        "6q1/1p6/4p2Q/3pP3/6kp/8/1P5K/3B4 b - - 4 49",
+        "8/1k6/1pp2P2/6P1/8/2np4/2r3QP/2K5 w - - 0 1",
+        "r6R/6pk/6N1/5P2/8/p4P2/6K1/8 b - - 1 1",
+        "4r2k/6p1/5p1p/1Q6/p2P1n2/2R1N2P/6q1/7K w - - 0 1",
+        "7k/7Q/p3q3/2p2n1p/Pp6/1P1B3P/2P5/7K b - - 9 47",
+        "6k1/R5pp/4Np2/5P2/8/2n5/P1P5/2K3r1 w - - 0 1",
+        "2R5/3K4/1P1P4/8/8/5q2/1p1N2b1/1k6 b - - 1 1",
+        "3r3k/8/7p/8/6P1/4Pr2/q1K1Qb1R/2R5 w - - 0 39",
       ];
 
   var BOARD = new ChessBoard('board');
