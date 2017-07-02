@@ -24,6 +24,11 @@
         "6k1/R5pp/4Np2/5P2/2n5/8/P1P5/2K3r1 w - - 0 1",
         "1R6/P1K5/2P5/8/8/5q2/p1N3b1/k7 b - - 1 1",
         "3r3k/8/7p/8/4P1P1/5r2/q1K1Qb1R/2R5 w - - 0 39", // Caro Naroditsky 2012
+        "4Q3/4q1kp/2p2p1P/1p1n4/3P4/6P1/3B1P1K/8 b - - 0 44", // Carlsen Jobava 2017
+        "6k1/5pb1/6p1/6N1/8/8/PR6/K3r3 w - - 0 1",
+        "2R5/4bR1k/1p1p3p/7P/4P3/5P2/r4q1P/7K b - - 0 51", // Carlsen Karjakin NY 2016
+        "1Q6/8/8/q7/8/K7/2k5/8 w - - 1 78", // Marjusaari AhvenJarvi 2012
+        "5Q2/6p1/p4kp1/1p1B4/5P2/P3P2P/3n2PK/4q3 b - - 2 36", // Ehlvest Valli 2012
       ],
       NON_MATE_POSTIONS = [
         "3Rk3/2q5/8/8/7B/6P1/6K1/8 b - - 0 1",
@@ -41,6 +46,11 @@
         "6k1/R5pp/4Np2/5P2/8/2n5/P1P5/2K3r1 w - - 0 1",
         "2R5/3K4/1P1P4/8/8/5q2/1p1N2b1/1k6 b - - 1 1",
         "3r3k/8/7p/8/6P1/4Pr2/q1K1Qb1R/2R5 w - - 0 39",
+        "4Q3/4q1kp/2p4P/1p1n1p2/3P4/6P1/3B1P1K/8 b - - 0 44",
+        "6k1/5p2/4b1p1/6N1/8/8/PR6/K3r3 w - - 0 1",
+        "2R5/4bR1k/1p1p3p/6qP/4P3/5P2/r6P/7K b - - 0 51",
+        "1Q6/8/q7/8/K7/8/2k5/8 w - - 1 78",
+        "5Q2/6p1/p4kp1/1pB5/5P2/P3P2P/3n2PK/4q3 b - - 2 36",
       ];
 
   var BOARD = new ChessBoard('board');
