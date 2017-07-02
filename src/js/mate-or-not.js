@@ -103,7 +103,7 @@
       return {mate: false, position: randomFrom(NON_MATE_POSTIONS)};
     }
   }
-  function showGreenSuccess() {
+  function showSuccess() {
     var messageBox = $("#message");
     messageBox.removeClass('error-message');
     messageBox.addClass('success-message');
@@ -113,6 +113,7 @@
     messageBox.removeClass('success-message');
     messageBox.addClass('error-message');
     messageBox.text(message);
+    errorBeep();
   }
   function resetMessage() {
     var messageBox = $("#message").text("");
@@ -123,12 +124,9 @@
   function updateMateButtonAction() {
     $("#mate").click(function() {
       if (currentPositionIsMate) {
-        showGreenSuccess();
-        setTimeout(function() {
-          showRandomPosition();
-        }, 400);
+        showSuccess();
+        showRandomPositionAfterDelay();
       } else {
-				errorBeep();
         showErrorMessage('Not Mate!');
       }
     });
@@ -136,11 +134,10 @@
   function updateNotMateButtonAction() {
     $("#not-mate").click(function() {
       if (currentPositionIsMate) {
-				errorBeep();
         showErrorMessage('Mate!');
       } else {
-        showGreenSuccess();
-        showRandomPosition();
+        showSuccess();
+        showRandomPositionAfterDelay();
       }
     });
   }
@@ -152,6 +149,11 @@
       resetMessage();
       BOARD.orientation(whoJustMoved(position));
       BOARD.position(position);
+  }
+  function showRandomPositionAfterDelay() {
+    setTimeout(function() {
+      showRandomPosition();
+    }, 400);
   }
   function bindButtonActions() {
     updateMateButtonAction();
