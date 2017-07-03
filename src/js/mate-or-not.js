@@ -22,7 +22,7 @@
         "4r2k/6p1/5p1p/1Q6/p2P1n2/N1R4P/6q1/7K w - - 0 1",
         "7k/7Q/p3q3/2p4p/Pp1n4/1P1B3P/2P5/7K b - - 9 47", // Can Ererdem, 2012
         "6k1/R5pp/4Np2/5P2/2n5/8/P1P5/2K3r1 w - - 0 1",
-        "1R6/P1K5/2P5/8/8/5q2/p1N3b1/k7 b - - 1 1",
+        "k7/p1N3b1/5q2/8/8/2P5/P1K5/1R6 b - - 1 1",
         "3r3k/8/7p/8/4P1P1/5r2/q1K1Qb1R/2R5 w - - 0 39", // Caro Naroditsky 2012
         "4Q3/4q1kp/2p2p1P/1p1n4/3P4/6P1/3B1P1K/8 b - - 0 44", // Carlsen Jobava 2017
         "6k1/5pb1/6p1/6N1/8/8/PR6/K3r3 w - - 0 1",
@@ -44,7 +44,7 @@
         "4r2k/6p1/5p1p/1Q6/p2P1n2/2R1N2P/6q1/7K w - - 0 1",
         "7k/7Q/p3q3/2p2n1p/Pp6/1P1B3P/2P5/7K b - - 9 47",
         "6k1/R5pp/4Np2/5P2/8/2n5/P1P5/2K3r1 w - - 0 1",
-        "2R5/3K4/1P1P4/8/8/5q2/1p1N2b1/1k6 b - - 1 1",
+        "1k6/1p1N2b1/5q2/8/8/1P1P4/3K4/2R5 b - - 1 1",
         "3r3k/8/7p/8/6P1/4Pr2/q1K1Qb1R/2R5 w - - 0 39",
         "4Q3/4q1kp/2p4P/1p1n1p2/3P4/6P1/3B1P1K/8 b - - 0 44",
         "6k1/5p2/4b1p1/6N1/8/8/PR6/K3r3 w - - 0 1",
