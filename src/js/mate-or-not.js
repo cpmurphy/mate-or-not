@@ -29,6 +29,9 @@
         "2R5/4bR1k/1p1p3p/7P/4P3/5P2/r4q1P/7K b - - 0 51", // Carlsen Karjakin NY 2016
         "1Q6/8/8/q7/8/K7/2k5/8 w - - 1 78", // Marjusaari AhvenJarvi 2012
         "5Q2/6p1/p4kp1/1p1B4/5P2/P3P2P/3n2PK/4q3 b - - 2 36", // Ehlvest Valli 2012
+        "7R/5pk1/p1Qp4/2nNp3/2N1Pb2/2P5/PPK5/2r5 w - - 3 37", // Anand MVL sideline Leuven 2017
+        "1r6/4Nppk/8/8/3b4/8/PP6/1K5R b - - 1 1",
+        "1k6/ppp3P1/2b5/8/8/8/6RP/r6K w - - 1 1",
       ],
       NON_MATE_POSTIONS = [
         "3Rk3/2q5/8/8/7B/6P1/6K1/8 b - - 0 1",
@@ -51,6 +54,9 @@
         "2R5/4bR1k/1p1p3p/6qP/4P3/5P2/r6P/7K b - - 0 51",
         "1Q6/8/q7/8/K7/8/2k5/8 w - - 1 78",
         "5Q2/6p1/p4kp1/1pB5/5P2/P3P2P/3n2PK/4q3 b - - 2 36",
+        "7R/5pk1/p1Qp4/n1NNp3/4Pb2/2P5/PPK5/2r5 w - - 3 37",
+        "1r6/4Nppk/8/8/8/4b3/PP6/1K5R b - - 1 1",
+        "1k6/ppp3P1/2b5/8/8/7P/6R1/r6K w - - 1 1",
       ];
 
   var BOARD = new ChessBoard('board');
