@@ -82,8 +82,8 @@
 		oscillator.type = 'sawtooth';
 
 		oscillator.start();
-		setTimeout(function(){oscillator.stop()}, (duration ? duration : 500));
-	};
+		setTimeout(function() { oscillator.stop(); }, (duration ? duration : 500));
+	}
 
   // just return true or false, randomly
   function coinFlip() {
