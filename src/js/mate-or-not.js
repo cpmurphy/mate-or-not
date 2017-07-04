@@ -32,6 +32,13 @@
         "7R/5pk1/p1Qp4/2nNp3/2N1Pb2/2P5/PPK5/2r5 w - - 3 37", // Anand MVL sideline Leuven 2017
         "1r6/4Nppk/8/8/3b4/8/PP6/1K5R b - - 1 1",
         "1k6/ppp3P1/2b5/8/8/8/6RP/r6K w - - 1 1",
+        "4Q3/p5pp/6k1/3N1p2/4pBq1/8/PPP2P1P/2K3R1 b - - 4 25", // https://lichess.org/2LjmD2UM
+        "3r2k1/pp2pp1p/4b1p1/q3P3/8/8/PQ2BPPP/R1r1K2R w KQ - 4 19", // https://lichess.org/zX53VCWn
+        "r1bqk1Q1/ppppb1p1/2n4r/8/4R3/2p2N2/PPP2PPP/R5K1 b - - 1 12", // https://lichess.org/ihLX1C8q
+        "4rr1k/ppp3pp/8/3Q4/4N2q/8/PP2nPP1/R1B2RK1 w - - 3 22", // https://lichess.org/s1sGs77p
+        "r1b1Q1k1/pp3r1p/2Pp2q1/3B4/P1PB1P2/6n1/8/2R1NRK1 b - - 3 25", // https://lichess.org/sgnY6byB
+        "1k6/2p2pp1/1p2b2p/2br4/2P5/5Q1P/P3KPP1/3q1B1R w - - 2 32", // https://lichess.org/25UJNWQ5
+        "R1k2r1r/3R1pp1/3n3p/1B1p4/1P1P4/4P3/5PPP/6K1 b - - 8 26", // https://lichess.org/gG03E5IB
       ],
       NON_MATE_POSTIONS = [
         "3Rk3/2q5/8/8/7B/6P1/6K1/8 b - - 0 1",
@@ -57,6 +64,13 @@
         "7R/5pk1/p1Qp4/n1NNp3/4Pb2/2P5/PPK5/2r5 w - - 3 37",
         "1r6/4Nppk/8/8/8/4b3/PP6/1K5R b - - 1 1",
         "1k6/ppp3P1/2b5/8/8/7P/6R1/r6K w - - 1 1",
+        "4Q3/p5pp/4N1k1/5p2/4p1q1/8/PPP2P1P/2K3R1 b - - 4 25",
+        "3r2k1/pp2pp1p/4b1p1/q3P3/8/5P2/PQ2B1PP/R1r1K2R w KQ - 4 19",
+        "r1bqk1Q1/pppp2p1/2nbp2r/8/4R3/2p2N2/PPP2PPP/R5K1 b - - 1 12",
+        "4rr1k/ppp3pp/8/3Q4/2B1N2q/8/PP2nPP1/R4RK1 w - - 3 22",
+        "r1b1Q1k1/pp3r1p/2Pp2q1/8/P1PB1P2/3B2n1/8/2R1NRK1 b - - 3 25",
+        "1k6/2p2pp1/1p2b2p/3r4/1bP5/5Q1P/PP2K1P1/3q1B1R w - - 2 32",
+        "R1k2r1r/3R1pp1/1P1n3p/3p4/1B1P4/4P3/5PPP/6K1 b - - 8 26",
       ];
 
   var BOARD = new ChessBoard('board');
