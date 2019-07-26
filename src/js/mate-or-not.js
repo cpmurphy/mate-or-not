@@ -39,6 +39,10 @@
         "r1b1Q1k1/pp3r1p/2Pp2q1/3B4/P1PB1P2/6n1/8/2R1NRK1 b - - 3 25", // https://lichess.org/sgnY6byB
         "1k6/2p2pp1/1p2b2p/2br4/2P5/5Q1P/P3KPP1/3q1B1R w - - 2 32", // https://lichess.org/25UJNWQ5
         "R1k2r1r/3R1pp1/3n3p/1B1p4/1P1P4/4P3/5PPP/6K1 b - - 8 26", // https://lichess.org/gG03E5IB
+        "r5k1/8/1ppBP2p/p2p1p2/P6p/4P2Q/1P3PP1/1Bnq1K2 w - - 2 32", // https://lichess.org/73JuJ2ft
+        "6k1/p3N2p/1p3Q2/6p1/5B2/8/PPP3PP/R5K1 b - - 2 26",
+        "r2q2k1/pp1n1Bp1/6N1/6Np/3p4/8/PPP2PPP/R4RK1 b - - 0 1",
+        "1r3r2/p4p1p/3p2p1/4p2k/2Bp3Q/1P1P2Pn/PBP5/1K6 b - - 1 4",
       ],
       NON_MATE_POSTIONS = [
         "3Rk3/2q5/8/8/7B/6P1/6K1/8 b - - 0 1",
@@ -71,6 +75,10 @@
         "r1b1Q1k1/pp3r1p/2Pp2q1/8/P1PB1P2/3B2n1/8/2R1NRK1 b - - 3 25",
         "1k6/2p2pp1/1p2b2p/3r4/1bP5/5Q1P/PP2K1P1/3q1B1R w - - 2 32",
         "R1k2r1r/3R1pp1/1P1n3p/3p4/1B1P4/4P3/5PPP/6K1 b - - 8 26",
+        "r5k1/8/1pp1P2p/p2p1p2/P6p/4PN1Q/1P3PP1/1Bnq1K2 w - - 2 32",
+        "r5k1/p3N3/1p3Q1p/6p1/8/8/PPP3PP/6K1 b - - 2 26",
+        "r2q2k1/pp1n1B2/6N1/6Np/3p4/8/PPP2PPP/R4RK1 b - - 0 1",
+        "1r3r2/p4p1p/3p4/4p2k/2Bp3Q/1P1P2Pn/PBP5/1K6 b - - 1 4",
       ];
 
   var BOARD = new ChessBoard('board');
