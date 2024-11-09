@@ -25,8 +25,8 @@
     "doc": "doc"
   },
   "devDependencies": {
-    "copyfiles": "^2.4.1",
-    "live-server": "^1.2.2"
+    "@compodoc/live-server": "^1.2.3",
+    "copyfiles": "^2.4.1"
   },
   "dependencies": {
     "cm-chessboard": "^8.7.4"
