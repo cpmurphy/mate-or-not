@@ -2,7 +2,7 @@
  * Copyright 2017 Christian Murphy
  * Released under the MIT license
  */
-import {Chessboard, FEN} from "./cm-chessboard/Chessboard.js";
+import {Chessboard, FEN, COLOR} from "./cm-chessboard/Chessboard.js";
 
 export function run() {
   bindButtonActions();
@@ -96,9 +96,9 @@ let currentPositionIsMate;
 function whoJustMoved(position) {
   var playerToMove = position.split(/ /)[1];
   if (playerToMove.substring(0, 1) === 'w') {
-    return 'black';
+    return COLOR.black;
   }
-  return 'white';
+  return COLOR.white;
 }
 
 // From https://stackoverflow.com/questions/879152/how-do-i-make-javascript-beep
@@ -181,7 +181,7 @@ function showRandomPosition() {
       position = possibleMate.position;
   currentPositionIsMate = possibleMate.mate;
   resetMessage();
-  BOARD.setOrientation(whoJustMoved(position) === 'white' ? 'white' : 'black');
+  BOARD.setOrientation(whoJustMoved(position) === COLOR.white ? COLOR.white : COLOR.black);
   BOARD.setPosition(position);
 }
 function showRandomPositionAfterDelay() {
