@@ -8,11 +8,27 @@
     "url": "git://github.com/cpmurphy/mate-or-not.git"
   },
   "main": "src/mate-or-not.js",
-  "dependencies": {
-    "jquery": ">=1.8.3"
-  },
   "scripts": {
-    "test": "mocha"
+    "copy-assets": "copyfiles -u 3 \"node_modules/cm-chessboard/assets/**/*.{css,css.map,svg}\" src/cm-chessboard-assets",
+    "copy-js": "copyfiles -u 2 \"node_modules/cm-chessboard/src/Chessboard.js\" src/js/cm-chessboard",
+    "copy-all": "npm run copy-assets && npm run copy-js",
+    "prebuild": "npm run copy-all",
+    "prestart": "npm run copy-all",
+    "start": "live-server src --port=3000"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cpmurphy/mate-or-not/issues"
+  },
+  "homepage": "https://github.com/cpmurphy/mate-or-not#readme",
+  "directories": {
+    "doc": "doc"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "cm-chessboard": "^8.7.4"
+  }
 }

@@ -2,13 +2,14 @@
  * Copyright 2017 Christian Murphy
  * Released under the MIT license
  */
+import {Chessboard, FEN} from "./cm-chessboard/Chessboard.js";
 
-;(function () {
-  'use strict';
+export function run() {
+  bindButtonActions();
+  showRandomPosition();
+}
 
-  // Globals for this module
-
-  var MATE_POSTIONS = [
+const MATE_POSITIONS = [
         "3Rk3/5q2/8/8/7B/6P1/6K1/8 b - - 0 1",
         "7R/2k5/r1p5/8/8/8/KPPn4/8 w - - 0 1",
         "5bkQ/ppq2p1p/2p5/8/8/1P4P1/PB3PKP/8 b - - 1 1",
@@ -43,8 +44,9 @@
         "6k1/p3N2p/1p3Q2/6p1/5B2/8/PPP3PP/R5K1 b - - 2 26",
         "r2q2k1/pp1n1Bp1/6N1/6Np/3p4/8/PPP2PPP/R4RK1 b - - 0 1",
         "1r3r2/p4p1p/3p2p1/4p2k/2Bp3Q/1P1P2Pn/PBP5/1K6 b - - 1 4",
+	"8/3R3p/8/8/P7/2kp2P1/5P1P/2r1K3 w - - 3 36",
       ],
-      NON_MATE_POSTIONS = [
+      NON_MATE_POSITIONS = [
         "3Rk3/2q5/8/8/7B/6P1/6K1/8 b - - 0 1",
         "7R/2k5/r1p5/8/8/1P6/K1Pn4/8 w - - 0 1",
         "5bkQ/ppq2n1p/2p5/8/8/1P4P1/PB3PKP/8 b - - 1 1",
@@ -79,119 +81,115 @@
         "r5k1/p3N3/1p3Q1p/6p1/8/8/PPP3PP/6K1 b - - 2 26",
         "r2q2k1/pp1n1B2/6N1/6Np/3p4/8/PPP2PPP/R4RK1 b - - 0 1",
         "1r3r2/p4p1p/3p4/4p2k/2Bp3Q/1P1P2Pn/PBP5/1K6 b - - 1 4",
+	"8/3R3p/8/8/P7/2kp2P1/7P/2r1K3 w - - 0 36",
       ];
 
-  var BOARD = new ChessBoard('board');
-  var currentPositionIsMate;  // global AND mutable!!!
+const BOARD = new Chessboard(document.getElementById("board"), {
+  position: FEN.start,
+  assetsUrl: "./cm-chessboard-assets/"
+});
 
+let currentPositionIsMate;
 
-  // The player who has already moved is the
-  // one who does not have the move now.
-  function whoJustMoved(position) {
-    var playerToMove = position.split(/ /)[1];
-    if (playerToMove.substring(0, 1) === 'w') {
-      return 'black';
-    }
-    return 'white';
+// The player who has already moved is the
+// one who does not have the move now.
+function whoJustMoved(position) {
+  var playerToMove = position.split(/ /)[1];
+  if (playerToMove.substring(0, 1) === 'w') {
+    return 'black';
   }
+  return 'white';
+}
 
-	// From https://stackoverflow.com/questions/879152/how-do-i-make-javascript-beep
-  var audioCtx = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
-	function errorBeep() {
-    var oscillator = audioCtx.createOscillator();
-    var gainNode = audioCtx.createGain();
-		var duration = 200; // milliseconds
+// From https://stackoverflow.com/questions/879152/how-do-i-make-javascript-beep
+var audioCtx = new (window.AudioContext || window.webkitAudioContext || window.audioContext);
+function errorBeep() {
+  var oscillator = audioCtx.createOscillator();
+  var gainNode = audioCtx.createGain();
+	var duration = 200; // milliseconds
 
-		oscillator.connect(gainNode);
-		gainNode.connect(audioCtx.destination);
+	oscillator.connect(gainNode);
+	gainNode.connect(audioCtx.destination);
 
-		gainNode.gain.value = 0.25;
-		oscillator.frequency.value = 440; // Hertz
-		oscillator.type = 'sawtooth';
+	gainNode.gain.value = 0.25;
+	oscillator.frequency.value = 440; // Hertz
+	oscillator.type = 'sawtooth';
 
-		oscillator.start();
-		setTimeout(function() { oscillator.stop(); }, (duration ? duration : 500));
-	}
+	oscillator.start();
+	setTimeout(function() { oscillator.stop(); }, (duration ? duration : 500));
+}
 
-  // just return true or false, randomly
-  function coinFlip() {
-    return Math.floor(Math.random() * 2) === 1;
+// just return true or false, randomly
+function coinFlip() {
+  return Math.floor(Math.random() * 2) === 1;
+}
+
+// choose a random position in the given array
+function randomFrom(array) {
+  var rand = Math.floor(Math.random() * array.length);
+  return array[rand];
+}
+
+function randomMateOrNot() {
+  if (coinFlip()) {
+    return {mate: true, position: randomFrom(MATE_POSITIONS)};
+  } else {
+    return {mate: false, position: randomFrom(NON_MATE_POSITIONS)};
   }
-
-  // choose a random position in the given array
-  function randomFrom(array) {
-    var rand = Math.floor(Math.random() * array.length);
-    return array[rand];
-  }
-
-  function randomMateOrNot() {
-    if (coinFlip()) {
-      return {mate: true, position: randomFrom(MATE_POSTIONS)};
+}
+function showSuccess() {
+  const messageBox = document.getElementById("message");
+  messageBox.classList.remove('error-message');
+  messageBox.classList.add('success-message');
+}
+function showErrorMessage(message) {
+  const messageBox = document.getElementById("message");
+  messageBox.classList.remove('success-message');
+  messageBox.classList.add('error-message');
+  messageBox.textContent = message;
+  errorBeep();
+}
+function resetMessage() {
+  const messageBox = document.getElementById("message");
+  messageBox.classList.remove("success-message");
+  messageBox.classList.remove("error-message");
+  messageBox.textContent = "";
+}
+function updateMateButtonAction() {
+  document.getElementById("mate").addEventListener("click", function() {
+    if (currentPositionIsMate) {
+      showSuccess();
+      showRandomPositionAfterDelay();
     } else {
-      return {mate: false, position: randomFrom(NON_MATE_POSTIONS)};
+      showErrorMessage('Not Mate!');
     }
-  }
-  function showSuccess() {
-    var messageBox = $("#message");
-    messageBox.removeClass('error-message');
-    messageBox.addClass('success-message');
-  }
-  function showErrorMessage(message) {
-    var messageBox = $("#message");
-    messageBox.removeClass('success-message');
-    messageBox.addClass('error-message');
-    messageBox.text(message);
-    errorBeep();
-  }
-  function resetMessage() {
-    var messageBox = $("#message").text("");
-    messageBox.removeClass("success-message");
-    messageBox.removeClass("error-message");
-    messageBox.text("");
-  }
-  function updateMateButtonAction() {
-    $("#mate").click(function() {
-      if (currentPositionIsMate) {
-        showSuccess();
-        showRandomPositionAfterDelay();
-      } else {
-        showErrorMessage('Not Mate!');
-      }
-    });
-  }
-  function updateNotMateButtonAction() {
-    $("#not-mate").click(function() {
-      if (currentPositionIsMate) {
-        showErrorMessage('Mate!');
-      } else {
-        showSuccess();
-        showRandomPositionAfterDelay();
-      }
-    });
-  }
-
-  function showRandomPosition() {
-      var possibleMate = randomMateOrNot(),
-          position = possibleMate.position;
-      currentPositionIsMate = possibleMate.mate;
-      resetMessage();
-      BOARD.orientation(whoJustMoved(position));
-      BOARD.position(position);
-  }
-  function showRandomPositionAfterDelay() {
-    setTimeout(function() {
-      showRandomPosition();
-    }, 400);
-  }
-  function bindButtonActions() {
-    updateMateButtonAction();
-    updateNotMateButtonAction();
-  }
-
-  window.mornot = {
-    run: function() {
-      bindButtonActions();
-      showRandomPosition();
+  });
+}
+function updateNotMateButtonAction() {
+  document.getElementById("not-mate").addEventListener("click", function() {
+    if (currentPositionIsMate) {
+      showErrorMessage('Mate!');
+    } else {
+      showSuccess();
+      showRandomPositionAfterDelay();
     }
-  };
-})();
+  });
+}
+
+function showRandomPosition() {
+  var possibleMate = randomMateOrNot(),
+      position = possibleMate.position;
+  currentPositionIsMate = possibleMate.mate;
+  resetMessage();
+  BOARD.setOrientation(whoJustMoved(position) === 'white' ? 'white' : 'black');
+  BOARD.setPosition(position);
+}
+function showRandomPositionAfterDelay() {
+  setTimeout(function() {
+    showRandomPosition();
+  }, 400);
+}
+function bindButtonActions() {
+  updateMateButtonAction();
+  updateNotMateButtonAction();
+}
