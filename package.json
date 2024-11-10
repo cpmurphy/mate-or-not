@@ -14,7 +14,7 @@
     "copy-all": "npm run copy-assets && npm run copy-js",
     "prebuild": "npm run copy-all",
     "prestart": "npm run copy-all",
-    "start": "live-server src --port=3000"
+    "start": "cd src && python3 -m http.server 3000"
   },
   "license": "MIT",
   "bugs": {
@@ -25,7 +25,6 @@
     "doc": "doc"
   },
   "devDependencies": {
-    "@compodoc/live-server": "^1.2.3",
     "copyfiles": "^2.4.1"
   },
   "dependencies": {
